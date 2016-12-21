@@ -252,7 +252,14 @@ a {
 	}
 }
 
+/*CUSTOM CSS AKR*/
+
 /*machine options styling - AKR */
 .variation-name {
     width: auto;
+}
+
+/*Password alert text*/
+#pass-warning {
+    color: red;
 }
