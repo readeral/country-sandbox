@@ -263,3 +263,18 @@ a {
 #pass-warning {
     color: red;
 }
+
+/* Kitting side-scroller */
+.custom-kit-panel {
+	width: 100%;
+	white-space: nowrap;
+	overflow-x: auto;
+}
+.custom-kit {
+	width: 220px;
+	display: inline-block;
+	vertical-align: top;
+	float: none;
+	clear: none;
+}
+.check {}

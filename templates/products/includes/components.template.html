@@ -14,11 +14,11 @@
 								<h3 class="panel-title">[@assemble_group_fullname@]</h3>
 							</div>
 						[%/if%]
-						<div class="panel-body">
+						<div class="custom-kit-panel panel-body">
 		[%/PARAM%]
 		[%PARAM *body%]
 							[%if ![@has_variation@]%]
-								<div class="col-xs-12 col-md-4 wrapper-components-thumbnail">
+								<div class="custom-kit col-xs-12 col-md-4 wrapper-components-thumbnail">
 									<input type="checkbox" id="[@sku@]a" class="hidden" checked>
 									<div class="components-thumbnail thumbnail component[@group_count@]">
 										<img class="component-var-thumb" component-id="[@component_count@]" src="[%asset_url type:'product' id:'[@SKU@]' thumb:'thumb'%][%/asset_url%]" alt="[@model@]" border="0" id="main-image">
@@ -44,7 +44,7 @@
 								</div>
 							[%else%]
 
-									<div class="col-xs-12 col-md-4 wrapper-components-thumbnail">
+									<div class="custom-kit col-xs-12 col-md-4 wrapper-components-thumbnail">
 										[%if [@variation_available@] > '0'%]<input type="checkbox" id="[@sku@]a" class="hidden" checked>[%/if%]
 										<div class="components-thumbnail thumbnail component[@group_count@]">
 											<img class="component-var-thumb" component-id="[@component_count@]" src="[%asset_url type:'product' id:'[@SKU@]' thumb:'thumb'%][%/asset_url%]" alt="[@model@]" border="0" id="main-image">
