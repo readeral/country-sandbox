@@ -277,4 +277,6 @@ a {
 	float: none;
 	clear: none;
 }
-.test-commit {}
+.test-commit {
+	display: none;
+}
