@@ -128,7 +128,7 @@
 			</form>
 			[%if [@has_variation@] || ![@has_child@] AND ![@has_components@]%]
 				[%load_ajax_template id:'_buying_options' type:'item' template:'buying_options' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
-				[%load_ajax_template id:'_buying_options2' type:'item' template:'buying_options2' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+				[%load_ajax_template id:'_shipping_estimate' type:'item' template:'shipping_estimate' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 			[%/if%]
 			<!-- AKR adding -->
 			[%upsell_products id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
