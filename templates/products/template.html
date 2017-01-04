@@ -288,7 +288,7 @@
 								[%if [@weight@] > '0'%]
 								<tr>
 									<td><strong>Shipping Weight</strong></td>
-									<td>[@weight@]kg</td>
+									<td>[%format type:'number' dp:'2'%][@weight@]kg</td>
 								</tr>
 								[%/if%]
 								[%if [@width@] > '0'%]
