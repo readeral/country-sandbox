@@ -288,31 +288,31 @@
 								[%if [@weight@] > '0'%]
 								<tr>
 									<td><strong>Shipping Weight</strong></td>
-									<td>[%format type:'number' dp:'0'%][@weight@][%/format%]kg</td>
+									<td>[%format type:'number' dp:'1'%][@weight@][%/format%]kg</td>
 								</tr>
 								[%/if%]
 								[%if [@width@] > '0'%]
 								<tr>
 									<td><strong>Shipping Width</strong></td>
-									<td>[%format type:'number' dp:'0'%][@width@][%/format%]m</td>
+									<td>[%format type:'number' dp:'2'%][@width@][%/format%]m</td>
 								</tr>
 								[%/if%]
 								[%if [@height@] > '0'%]
 								<tr>
 									<td><strong>Shipping Height</strong></td>
-									<td>[@height@]m</td>
+									<td>[%format type:'number' dp:'2'%][@height@][%/format%]m</td>
 								</tr>
 								[%/if%]
 								[%if [@length@] > '0'%]
 								<tr>
 									<td><strong>Shipping Length</strong></td>
-									<td>[@length@]m</td>
+									<td>[%format type:'number' dp:'2'%][@length@][%/format%]m</td>
 								</tr>
 								[%/if%]
 								[%if [@cubic@] > '0'%]
 								<tr>
 									<td><strong>Shipping Cubic</strong></td>
-									<td>[@cubic@]m3</td>
+									<td>[%format type:'number' dp:'2'%][@cubic@][%/format%]m3</td>
 								</tr>
 								[%/if%]
 								[%if [@unit@]%]
@@ -324,19 +324,19 @@
 								[%if [@actual_length@] > '0'%]
 								<tr>
 									<td><strong>Assembled Length</strong></td>
-									<td>[@actual_length@]m</td>
+									<td>[%format type:'number' dp:'2'%][@actual_length@][%/format%]m</td>
 								</tr>
 								[%/if%]
 								[%if [@actual_height@] > '0'%]
 								<tr>
 									<td><strong>Assembled Height</strong></td>
-									<td>[@actual_height@]m</td>
+									<td>[%format type:'number' dp:'2'%][@actual_height@][%/format%]m</td>
 								</tr>
 								[%/if%]
 								[%if [@actual_width@] > '0'%]
 								<tr>
 									<td><strong>Assembled Width</strong></td>
-									<td>[@actual_width@]m</td>
+									<td>[%format type:'number' dp:'2'%][@actual_width@][%/format%]m</td>
 								</tr>
 								[%/if%]
 								[%if [@product_type@]%]
