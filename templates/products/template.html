@@ -294,7 +294,7 @@
 								[%if [@width@] > '0'%]
 								<tr>
 									<td><strong>Shipping Width</strong></td>
-									<td>[@width@]m</td>
+									<td>[%format type:'number' dp:'0'%][@width@][%/format%]m</td>
 								</tr>
 								[%/if%]
 								[%if [@height@] > '0'%]
