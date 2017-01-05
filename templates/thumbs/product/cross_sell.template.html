@@ -7,7 +7,7 @@
 		<div class="caption">
 			<h3 itemprop="name"><a href="[@URL@]" title="[@model@]"><!--##[%format type:'text' maxlength:'60' rmhtml:'1'%]##-->[@model@]<!--##[%END FORMAT%]##--></a></h3>
 			<p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-			<span class="label label-default">Standalone price <!--##[%format type:'currency'%]##-->[@store_price@]<!--##[%/format%]##--></span>
+			<!--<span class="label label-default">Standalone price [%format type:'currency'%][@store_price@][%/format%]</span>-->
 				[%if [@inpromo@]%]
 					Now [%if [@has_child@]%]from&nbsp;[%/if%]
 					<span itemprop="price">[%format type:'currency'%][@promo_price@][%/format%]</span>
@@ -16,7 +16,8 @@
 					[%set [@paired_price@] %]
 						[%calc [@store_price@] - [@misc1@] /%]
 					[%/set%]
-					<span itemprop="price">[%format type:'currency'%][@paired_price@][%/format%]</span>
+					<span itemprop="price" class="red">[%format type:'currency'%][@paired_price@][%/format%]</span>
+					<span itemprop="price" class="strikethrough">[%format type:'currency'%][@store_price@][%/format%]</span>
 				[%/if%]
 				<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 				<span class="explain"><br />when bought with this machine.</span>

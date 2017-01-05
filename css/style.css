@@ -282,6 +282,12 @@ a {
 	height: auto;
 }
 .custom-cross-panel .explain {
-	font-size: 50%;
+	font-size: 70%;
+}
+.strikethrough {
+	text-decoration: line-through;
+}
+.red {
+	color: red;
 }
 /*
