@@ -19,8 +19,7 @@
 				[%/if%]
 				<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 			</p>
-			<p>TEST[@paired_price@]</p>
-			<p>Save a further [@misc1@] when paired with a machine.</p>
+			<p>[%format type:'currency'%][@paired_price@][%/format%] when bought with this machine.</p>
 			<!--# BUYING OPTIONS # ##-->
 			<form class="form-inline buying-options">
 				<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku[@rndm@][@SKU@]" value="[@SKU@]">
@@ -51,6 +50,7 @@
 			<!--##[%END IF%]##-->
 			<!--##[%IF [@save@] > 0%]##-->
 				<span class="label label-default">RRP <!--##[%format type:'currency'%]##-->[@retail@]<!--##[%END format%]##--></span>
+				<span class="label label-danger">Store price <!--##[%format type:'currency'%]##-->[@store_price@]<!--##[%/format%]##--></span>
 			<!--##[%END IF%]##-->
 		</div>
 	</div>
