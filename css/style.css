@@ -265,12 +265,12 @@ a {
 }
 
 /* Kitting side-scroller */
-.custom-kit-panel {
+.custom-cross-panel {
 	width: 100%;
 	white-space: nowrap;
 	overflow-x: auto;
 }
-.custom-kit {
+.custom-cross {
 	width: 220px;
 	display: inline-block;
 	vertical-align: top;
