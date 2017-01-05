@@ -276,6 +276,7 @@ a {
 	vertical-align: top;
 	float: none;
 	clear: none;
+	white-space: normal;
 }
 .test-commit {
 	display: none;
