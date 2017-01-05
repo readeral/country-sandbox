@@ -131,16 +131,17 @@
 				[%load_ajax_template id:'_buying_options2' type:'item' template:'buying_options2' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 			[%/if%]
 			<!-- AKR adding -->
-			[%upsell_products id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
+			[%crosssell id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
 				[%param header%]
 				<hr />
 				<h3>You will also need</h3>
+				<br />
 				<div class="row">
 				[%/param%]
 				[%param footer%]
 				</div>
 				[%/param%]
-			[%/upsell_products%]
+			[%/crosssell%]
 			<!-- end AKR adding -->
 			[%if [@has_components@]%]
 			<hr>
