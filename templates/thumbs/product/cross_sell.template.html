@@ -15,11 +15,10 @@
 					[%set [@paired_price@] %]
 						[%calc [@store_price@] - [@misc1@] /%]
 					[%/set%]
-					<span itemprop="price">[%format type:'currency'%][@store_price@][%/format%]</span>
+					<span itemprop="price">[%format type:'currency'%][@paired_price@][%/format%] when bought with this machine.</span>
 				[%/if%]
 				<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 			</p>
-			<p>[%format type:'currency'%][@paired_price@][%/format%] when bought with this machine.</p>
 			<!--# BUYING OPTIONS # ##-->
 			<form class="form-inline buying-options">
 				<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku[@rndm@][@SKU@]" value="[@SKU@]">
@@ -50,7 +49,7 @@
 			<!--##[%END IF%]##-->
 			<!--##[%IF [@save@] > 0%]##-->
 				<span class="label label-default">RRP <!--##[%format type:'currency'%]##-->[@retail@]<!--##[%END format%]##--></span>
-				<span class="label label-danger">Store price <!--##[%format type:'currency'%]##-->[@store_price@]<!--##[%/format%]##--></span>
+				<span class="label label-default">Standalone price <!--##[%format type:'currency'%]##-->[@store_price@]<!--##[%/format%]##--></span>
 			<!--##[%END IF%]##-->
 		</div>
 	</div>
