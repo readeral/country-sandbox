@@ -12,10 +12,14 @@
 					<span itemprop="price">[%format type:'currency'%][@promo_price@][%/format%]</span>
 				[%else%]
 					[%if [@has_child@]%]From&nbsp;[%/if%]
+					[%set [@paired_price@] %]
+						[%calc [@store_price@] - [@misc1@] /%]
+					[%/set%]
 					<span itemprop="price">[%format type:'currency'%][@store_price@][%/format%]</span>
 				[%/if%]
 				<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 			</p>
+			<p>[@paired_price@]</p>
 			<p>Save a further [@misc1@] when paired with a machine.</p>
 			<!--# BUYING OPTIONS # ##-->
 			<form class="form-inline buying-options">
