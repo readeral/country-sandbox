@@ -264,7 +264,7 @@ a {
     color: red;
 }
 
-/* Kitting side-scroller */
+/* Cross-sell side-scroller */
 .custom-cross-panel {
 	width: 100%;
 	white-space: nowrap;
@@ -278,6 +278,10 @@ a {
 	clear: none;
 	white-space: normal;
 }
-.test-commit {
-	display: none;
+.custom-cross-panel .caption .price {
+	height: auto;
 }
+.custom-cross-panel .explain {
+	font-size: 50%;
+}
+/*
