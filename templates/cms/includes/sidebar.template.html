@@ -31,24 +31,6 @@
 						[%/DATA%]
 					[%/PARAM%]
 				[%/PRODUCT_FILTER%]
-				[%product_filter type:'instock' autohide:'0'%]
-					[%param header%]
-						<li class="list-group-item">
-							<h4>Filter By Stock</h4>
-						</li>
-					[%/param%]
-					[%param *body%]
-						[%if [@selected@]%]
-							<li class="filter-remove">
-								<a href="[@remove_url@]" class="list-group-item" rel="nofollow">In Stock <span class="text-muted">([@total@])</span></a>
-							</li>
-						[%else%]
-							<li class="filter">
-								<a href="[@url@]" class="list-group-item">In Stock <span class="text-muted">([@total@])</span></a>
-							</li>
-						[%/if%]
-					[%/param%]
-				[%/product_filter%]
 					[%PRODUCT_FILTER type:'price' limit:'6'%]
 						[%PARAM header%]
 							<li class="list-group-item hidden-md hidden-lg"><h4>Filter By Price Range</h4></li>
