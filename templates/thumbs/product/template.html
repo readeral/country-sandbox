@@ -12,7 +12,7 @@
 					<span itemprop="price">[%format type:'currency'%][@promo_price@][%/format%]</span>
 				[%else%]
 					[%if [@has_child@]%]From&nbsp;[%/if%]
-					<span itemprop="price">[@misc1@][%format type:'currency'%][@store_price@][%/format%]</span>
+					<span itemprop="price">[%format type:'currency'%][@store_price@][%/format%]</span>
 				[%/if%]
 				<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 			</p>
