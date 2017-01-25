@@ -65,6 +65,7 @@
 									<input type="hidden" name="compsku[@count@]_[@component_count@]" value="[@SKU@]">
 									<label>[@model@] x </label>
 									<input type="text" min="[@min_assemble@]" max="[@max_assemble@]" name="compqty[@count@]_[@component_count@]" class="form-control [%if [@fixed_assemble@]%]readonly[%/if%]" [%if [@fixed_assemble@]%]readonly[%/if%] value="[@qty@]" size="3">
+									<p>[@price@]</p>
 								</li>
 								[%/param%]
 								[%param *footer%]
@@ -142,6 +143,22 @@
 		<div class="col-xs-12 col-md-3">
 			<div class="panel panel-default">
 				<div class="panel-heading">
+					<h4 class="panel-title">Discount Code</h4>
+				</div>
+				<div class="panel-body">
+					<form method="post" action="[%url page:'checkout'/%]">
+						<p>If you have a coupon or discount code enter it below</p>
+						<div class="form-group">
+							<input class="form-control" type="text" name="addcpn" value="" />
+						</div>
+						<input type="submit" class="btn btn-block btn-default" value="Apply Coupon Code">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
 					<h4 class="panel-title">Shipping Calculator</h4>
 				</div>
 				<div class="panel-body">
@@ -161,22 +178,6 @@
 							<input class="form-control" type="text" size="5" name="ship_zip" id="ship_zip" value="[@ship_zip@]" />
 						</div>
 						<input type="submit" class="btn btn-default btn-block" value="Calculate Shipping" />
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-12 col-md-3">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">Discount Code</h4>
-				</div>
-				<div class="panel-body">
-					<form method="post" action="[%url page:'checkout'/%]">
-						<p>If you have a coupon or discount code enter it below</p>
-						<div class="form-group">
-							<input class="form-control" type="text" name="addcpn" value="" />
-						</div>
-						<input type="submit" class="btn btn-block btn-default" value="Apply Coupon Code">
 					</form>
 				</div>
 			</div>
@@ -234,7 +235,7 @@
 					[%/param%]
 					[%param *body%]
 					<tr>
-						<td> [@code@] [@title@] <a href="[%url page:'checkout' qs:'rmcpn=[@code@]'/%]"><i class="fa fa-times"></i></a>
+						<td> [@title@] <a href="[%url page:'checkout' qs:'rmcpn=[@code@]'/%]"><i class="fa fa-times"></i></a>
 						</td>
 						<td class="text-right">-[%format type:'currency'%][@discount@][%/format%]</td>
 					</tr>
