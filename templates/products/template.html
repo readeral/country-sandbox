@@ -128,10 +128,7 @@
 			</form>
 			[%if [@has_variation@] || ![@has_child@] AND ![@has_components@]%]
 				[%load_ajax_template id:'_buying_options' type:'item' template:'buying_options' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
-				[%if [@service_only@] == true%]
-				[%else%]
 				[%load_ajax_template id:'_buying_options2' type:'item' template:'buying_options2' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
-				[%/if%]
 			[%/if%]
 			<!-- AKR adding -->
 			[%crosssell id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
