@@ -131,7 +131,7 @@
 				[%load_ajax_template id:'_buying_options2' type:'item' template:'buying_options2' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 			[%/if%]
 			<!-- AKR adding -->
-			[%crosssell id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
+			[%crosssell id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'cross_sell' show_all:'1'%]
 				[%param header%]
 				<hr />
 				<h3>Package with a grinder</h3>
