@@ -6,7 +6,11 @@
 				<img src="[%asset_url type:'product' thumb:'thumb' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%END asset_url%]" class="product-image" width="100%" alt="[@model@]" rel="itmimg[@SKU@]">
 			</a>
 			<!--##[%IF [@inpromo@]%]##-->
+			<!--##[%IF [@user:group_id@] == 2 | 3 | 4 %]##-->
+			<div class="savings-container"><span class="label label-danger">Trade price</span></div>
+			<!--##[%ELSE%]##-->
 			<div class="savings-container"><span class="label label-danger">On Sale</span></div>
+			<!--##[%END IF%]##-->
 			<!--##[%END IF%]##-->
 		</div>
 		<div class="col-sm-12 col-md-7">

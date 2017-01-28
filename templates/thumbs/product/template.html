@@ -38,7 +38,11 @@
 		</div>
 		<div class="savings-container">
 			<!--##[%IF [@inpromo@]%]##-->
+			<!--##[%IF [@user:group_id@] == 2 | 3 | 4 %]##-->
+				<span class="label label-danger">Trade price</span>
+			<!--##[%ELSE%]##-->
 				<span class="label label-danger">On Sale</span>
+			<!--##[%END IF%]##-->
 			<!--##[%END IF%]##-->
 			<!--##[%IF [@save@] > 0 AND ![@has_child@] %]##-->
 				<span class="label label-warning">
