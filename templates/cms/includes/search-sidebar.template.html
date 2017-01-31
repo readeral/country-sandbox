@@ -195,6 +195,16 @@
 					</li>
 				[%/PARAM%]
 				[%PARAM *level_3%]
+					<li class="[%DATA id:'next_level' if:'ne' value:''%]dropdown dropdown-hover[%/DATA%]">
+						<a href="[@url@]">[@name@]</a>
+						[%DATA id:'next_level' if:'ne' value:''%]
+							<ul class="dropdown-menu dropdown-menu-horizontal">
+								[@next_level@]
+							</ul>
+						[%/DATA%]
+					</li>
+				[%/PARAM%]
+				[%PARAM *level_4%]
 					<li class="lv3-li">
 						<a href="[@url@]">[@name@]</a>
 					</li>
