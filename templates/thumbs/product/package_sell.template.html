@@ -23,6 +23,9 @@
 				<span class="explain"><br />when bought with this machine.</span>
 			</p>
 			<!--# BUYING OPTIONS # ##-->
+			[%if [@has_variation@] || ![@has_child@] AND ![@has_components@]%]
+				[%load_ajax_template id:'_buying_options' type:'item' template:'buying_options' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+			[%/if%]
 			<form class="form-inline buying-options">
 				<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku[@rndm@][@SKU@]" value="[@SKU@]">
 				<input type="hidden" id="model[@rndm@][@SKU@]" name="model[@rndm@][@SKU@]" value="[@model@]">
