@@ -142,6 +142,16 @@
 				</div>
 				[%/param%]
 			[%/thumb_list%]
+			[%thumb_list type:'products' filter_category:'[@CONFIG:UpsellKit@]' template:'package_sell' limit:'[@config:upsell_limit@]'%]
+				[%param *header%]
+				<hr />
+				<h3>We Also Recommend</h3>
+				<br />
+				<div class="row custom-cross-panel">
+				[%/param%][%param footer%]
+				</div>
+				[%/param%]
+			[%/thumb_list%]
 			<!-- end AKR adding -->
 			[%if [@has_components@]%]
 			<hr>
@@ -442,16 +452,6 @@
 				</div>
 				[%/param%]
 			[%/related_products%]
-			[%thumb_list type:'products' filter_category:'[@CONFIG:UpsellKit@]' template:'package_sell' limit:'[@config:upsell_limit@]'%]
-				[%param *header%]
-				<hr />
-				<h3>We Also Recommend</h3>
-				<br />
-				<div class="row">
-				[%/param%][%param footer%]
-				</div>
-				[%/param%]
-			[%/thumb_list%]
 			[%/CACHE%]
 			[%if [@config:phistory_limit@]%]
 				[%product_history limit:'[@config:phistory_limit@]' template:''%]
