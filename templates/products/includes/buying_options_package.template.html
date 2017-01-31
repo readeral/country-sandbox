@@ -1,11 +1,11 @@
 <div class="extra-options">
 		<!-- PRODUCT OPTIONS -->
-	[%extra_options id:'[@SKU@]'%]
+	[%extra_options id:'[@current_sku@]'%]
 		[%PARAM *header%]
 		<form>
-			[%list_item_variations id:'[@SKU@]'%]
+			[%list_item_variations id:'[@current_sku@]'%]
 				[%param header%]
-				<input type="hidden" id="_itmspec_sku" value="[%nohtml%][@SKU@][%/nohtml%]">
+				<input type="hidden" id="_itmspec_sku" value="[%nohtml%][@current_sku@][%/nohtml%]">
 				<hr>
 				<div class="row">
 				[%/param%]
@@ -126,7 +126,6 @@
 			[%PARAM *footer%]
 			<input type="hidden" name="extras" value="[@total_options@]"/>
 		</table>
-		<hr />
 		[%END PARAM%]
 	[%END extra_options%]
 
@@ -142,7 +141,7 @@
 	<form class="buying-options">
 		<input type="hidden" id="model[@rndm@][@SKU@]" name="model" value="[@model@]">
 		<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb" value="[@thumb@]">
-		<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku" value="[@SKU@]">
+		<input type="hidden" id="sku[@rndm@][@current_sku@]" name="sku" value="[@current_sku@]">
 		<div class="row btn-stack">
 			<div class="hidden">
 				<input type="number" min="[@min_qty@]" class="form-control qty input-lg" id="qty[@rndm@][@SKU@]" name="qty" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
