@@ -7,6 +7,30 @@
 				</h3>
 			</div>
 			<ul id="filters" class="panel-collapse collapse list-group">
+				[%PRODUCT_FILTER type:'variations' autohide:'0'%]
+					[%PARAM *header%]
+						[%DATA id:'activecount' if:'>' value:'0'%]
+							[%PARAM *if_true%]
+								<a href="[@remove_url@]" class="pull-right"> clear</a>
+							[%/PARAM%]
+						[%/DATA%]
+						<li class="list-group-item"><h4>Filter By [@filter_name@]</h4></li>
+					[%/PARAM%]
+					[%PARAM *body%]
+						[%DATA id:'selected' if:'==' value:'1'%]
+							[%PARAM *if_true%]
+								<li class="filter-remove filter"><a href="[@remove_single_url@]" class="list-group-item" rel="nofollow">
+									[@name@] <span class="text-muted"></span></a>
+								</li>
+							[%/PARAM%]
+							[%PARAM *if_false%]
+								<li class="filter">
+									<a class="list-group-item" href="[@url@]"> [@name@] <span class="text-muted"></span></a>
+								</li>
+							[%/PARAM%]
+						[%/DATA%]
+					[%/PARAM%]
+				[%/PRODUCT_FILTER%]
 				[%PRODUCT_FILTER type:'category' limit:'100' autohide:'0' filter_parent_content:'1'%]
 					[%PARAM header%]
 						<li class="list-group-item">
@@ -28,30 +52,24 @@
 						[%/DATA%]
 					[%/PARAM%]
 				[%/PRODUCT_FILTER%]
-				[%PRODUCT_FILTER type:'variations' autohide:'0'%]
-					[%PARAM *header%]
-						[%DATA id:'activecount' if:'>' value:'0'%]
-							[%PARAM *if_true%]
-								<a href="[@remove_url@]" class="pull-right"> clear</a>
-							[%/PARAM%]
-						[%/DATA%]
-						<li class="list-group-item hidden"><h4>Filter By [@filter_name@]</h4></li>
-					[%/PARAM%]
-					[%PARAM *body%]
-						[%DATA id:'selected' if:'==' value:'1'%]
-							[%PARAM *if_true%]
-								<li class="filter-remove filter hidden"><a href="[@remove_single_url@]" class="list-group-item" rel="nofollow">
-									[@name@] <span class="text-muted"></span></a>
-								</li>
-							[%/PARAM%]
-							[%PARAM *if_false%]
-								<li class="filter hidden">
-									<a class="list-group-item" href="[@url@]"> [@name@] <span class="text-muted"></span></a>
-								</li>
-							[%/PARAM%]
-						[%/DATA%]
-					[%/PARAM%]
-				[%/PRODUCT_FILTER%]
+				[%product_filter type:'instock' autohide:'0'%]
+					[%param header%]
+						<li class="list-group-item">
+							<h4>Filter By Stock</h4>
+						</li>
+					[%/param%]
+					[%param *body%]
+						[%if [@selected@]%]
+							<li class="filter-remove">
+								<a href="[@remove_url@]" class="list-group-item" rel="nofollow">In Stock <span class="text-muted">([@total@])</span></a>
+							</li>
+						[%else%]
+							<li class="filter">
+								<a href="[@url@]" class="list-group-item">In Stock <span class="text-muted">([@total@])</span></a>
+							</li>
+						[%/if%]
+					[%/param%]
+				[%/product_filter%]
 					[%PRODUCT_FILTER type:'price' limit:'6'%]
 						[%PARAM header%]
 							<li class="list-group-item hidden-md hidden-lg"><h4>Filter By Price Range</h4></li>
@@ -126,7 +144,7 @@
 							</li>
 						[%/PARAM%]
 					[%/PRODUCT_FILTER%]
-					[%PRODUCT_FILTER type:'brand' limit:'6' autohide:'0'%]
+					[%PRODUCT_FILTER type:'brand' limit:'50' autohide:'0'%]
 						[%PARAM header%]
 							<li class="list-group-item"><h4>Filter By Brand</h4></li>
 						[%/PARAM%]
@@ -150,6 +168,53 @@
 			</ul>
 		</div>
 	[%/IF%]
+	[%CACHE type:'cmenu' id:'sidebar'%]
+	[%CATEGORYMENU sortby:'sortorder,selected,name' show_empty:'0'%]
+		[%PARAM header%]
+			<div class="panel panel-default hidden-xs">
+				<div class="panel-heading"><h3 class="panel-title">Categories</h3></div>
+				<ul class="list-group">
+				[%/PARAM%]
+				[%PARAM *level_1%]
+					<li class="[%DATA id:'next_level' if:'ne' value:''%]dropdown dropdown-hover[%/DATA%]"><a href="[@url@]" class="list-group-item dropdown-toggle">[@name@]</a>
+						[%DATA id:'next_level' if:'ne' value:''%]
+							<ul class="dropdown-menu dropdown-menu-horizontal">
+								[@next_level@]
+							</ul>
+						[%/DATA%]
+					</li>
+				[%/PARAM%]
+				[%PARAM *level_2%]
+					<li class="[%DATA id:'next_level' if:'ne' value:''%]dropdown dropdown-hover[%/DATA%]">
+						<a href="[@url@]">[@name@]</a>
+						[%DATA id:'next_level' if:'ne' value:''%]
+							<ul class="dropdown-menu dropdown-menu-horizontal">
+								[@next_level@]
+							</ul>
+						[%/DATA%]
+					</li>
+				[%/PARAM%]
+				[%PARAM *level_3%]
+					<li class="[%DATA id:'next_level' if:'ne' value:''%]dropdown dropdown-hover[%/DATA%]">
+						<a href="[@url@]">[@name@]</a>
+						[%DATA id:'next_level' if:'ne' value:''%]
+							<ul class="dropdown-menu dropdown-menu-horizontal">
+								[@next_level@]
+							</ul>
+						[%/DATA%]
+					</li>
+				[%/PARAM%]
+				[%PARAM *level_4%]
+					<li class="lv3-li">
+						<a href="[@url@]">[@name@]</a>
+					</li>
+				[%/PARAM%]
+				[%PARAM footer%]
+				</ul>
+			</div>
+		[%/PARAM%]
+	[%/CATEGORYMENU%]
+	[%/CACHE%]
 	[%CONFIG id:'phistory_limit' if:'ne' value:'0'%]
 		[%PRODUCT_HISTORY limit:'[@config:phistory_limit@]' template:'box'%]
 			[%PARAM header%]
