@@ -141,7 +141,7 @@
 	<form class="buying-options">
 		<input type="hidden" id="model[@rndm@][@SKU@]" name="model" value="[@model@]">
 		<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb" value="[@thumb@]">
-		<input type="hidden" id="sku[@rndm@][@current_sku@]" name="sku" value="[@current_sku@]">
+		<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku" value="[@SKU@]">
 		<div class="row btn-stack">
 			<div class="hidden">
 				<input type="number" min="[@min_qty@]" class="form-control qty input-lg" id="qty[@rndm@][@SKU@]" name="qty" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
