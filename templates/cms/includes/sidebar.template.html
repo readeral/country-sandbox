@@ -40,12 +40,12 @@
 					[%PARAM *body%]
 						[%DATA id:'selected' if:'==' value:'1'%]
 							[%PARAM *if_true%]
-								<li class="filter-remove filter hidden"><a href="[@remove_single_url@]" class="list-group-item" rel="nofollow">
+								<li class="filter-remove filter"><a href="[@remove_single_url@]" class="list-group-item" rel="nofollow">
 									[@name@] <span class="text-muted"></span></a>
 								</li>
 							[%/PARAM%]
 							[%PARAM *if_false%]
-								<li class="filter hidden">
+								<li class="filter">
 									<a class="list-group-item" href="[@url@]"> [@name@] <span class="text-muted"></span></a>
 								</li>
 							[%/PARAM%]
