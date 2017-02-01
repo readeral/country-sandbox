@@ -131,6 +131,7 @@
 				[%load_ajax_template id:'_buying_options2' type:'item' template:'buying_options2' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 			[%/if%]
 			<!-- AKR adding -->
+			[%load_ajax_template id:'_buying_options' type:'item' template:'buying_options_package' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 			[%thumb_list type:'products' filter_category:'[@CONFIG:UpsellGrinder@]' template:'package_sell' limit:'20'%]
 				[%param header%]
 				<hr />
