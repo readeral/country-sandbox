@@ -90,7 +90,7 @@
 					</th>
 				</tr><tr>
 					<td>
-						<input name="extra[@count@]" class="form-control" id="productextra[@count@]" rel="[@SKU@]" value="">
+						<input name="extra[@count@]" class="form-control" id="productextra[@count@]" rel="[@current_sku@]" value="">
 					</td>
 				</tr>
 			[%END PARAM%][%PARAM *text_option%]
@@ -100,7 +100,7 @@
 				</th>
 			</tr><tr>
 				<td>
-						<textarea name="extra[@count@]" [%if [@length@]%]maxlength="[@length@]"[%/if%]class="form-control" id="productextra[@count@]" rel="[@SKU@]" cols="20"></textarea>
+						<textarea name="extra[@count@]" [%if [@length@]%]maxlength="[@length@]"[%/if%]class="form-control" id="productextra[@count@]" rel="[@current_sku@]" cols="20"></textarea>
 					</td>
 				</tr>
 			[%END PARAM%]
@@ -111,7 +111,7 @@
 				</th>
 			</tr><tr>
 				<td>
-						<select name="extra[@count@]" class="form-control" id="productextra[@count@]" rel="[@SKU@]">
+						<select name="extra[@count@]" class="form-control" id="productextra[@count@]" rel="[@current_sku@]">
 							[@choices@]
 						</select>
 					</td>
@@ -140,9 +140,9 @@
 	Maximum Order Quantity <strong>[@max_qty@]</strong>
 	[%end data%]
 	<form class="buying-options">
-		<input type="hidden" id="model[@rndm@][@SKU@]" name="model" value="[@model@]">
-		<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb" value="[@thumb@]">
-		<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku" value="[@SKU@]">
+		<input type="hidden" id="model[@rndm@][@current_sku@]" name="model" value="[@model@]">
+		<input type="hidden" id="thumb[@rndm@][@current_sku@]" name="thumb" value="[@thumb@]">
+		<input type="hidden" id="sku[@rndm@][@current_sku@]" name="sku" value="[@current_sku@]">
 		<div class="row btn-stack">
 			<div class="hidden">
 				<input type="number" min="[@min_qty@]" class="form-control qty input-lg" id="qty[@rndm@][@current_sku@]" name="qty" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
