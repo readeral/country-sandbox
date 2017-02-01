@@ -42,8 +42,7 @@
 			</form>
 			<div id="reveal[@rndm@][@SKU@]" class="reveal">
 			[%if [@has_variation@] || ![@has_child@] AND ![@has_components@]%]
-				[%set [@current_sku@] %][@SKU@][%/set%]
-				[%load_ajax_template id:'_buying_options_package' type:'item' template:'buying_options_package' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+				[%load_ajax_template id:'_buying_options_package' type:'item' template:'buying_options_package' preload:'1' tmpl_sku:'[@SKU@]' tmpl_preview:'y'/%]
 			[%/if%]
 			</div>
 			<!--# END PRODUCT BUYING OPTIONS # ##-->
