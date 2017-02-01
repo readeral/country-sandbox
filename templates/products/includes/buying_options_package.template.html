@@ -145,15 +145,15 @@
 		<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku" value="[@SKU@]">
 		<div class="row btn-stack">
 			<div class="hidden">
-				<input type="number" min="[@min_qty@]" class="form-control qty input-lg" id="qty[@rndm@][@SKU@]" name="qty" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
+				<input type="number" min="[@min_qty@]" class="form-control qty input-lg" id="qty[@rndm@][@current_sku@]" name="qty" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
 			</div>
 			<div class="col-xs-12 col-md-12">
 				[%IF [@store_quantity@] > 0 AND [@preorder@] %]
-				<button type="button" title="Add to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-clock-o icon-white"></i> Pre-Order Now</button>
+				<button type="button" title="Add to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@current_sku@]"><i class="fa fa-clock-o icon-white"></i> Pre-Order Now</button>
 				[%ELSEIF [@store_quantity@] > 0 AND ![@preorder@] %]
-				<button type="button" title="Add to Cart" class="addtocart btn btn-success btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-shopping-cart icon-white"></i> Add to Cart</button>
+				<button type="button" title="Add to Cart" class="addtocart btn btn-success btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@current_sku@]"><i class="fa fa-shopping-cart icon-white"></i> Add to Cart</button>
 				[%ELSEIF [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
-				<button type="button" title="Add to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-clock-o icon-white"></i> Backorder</button>
+				<button type="button" title="Add to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@current_sku@]"><i class="fa fa-clock-o icon-white"></i> Backorder</button>
 				[%ELSE%]
 				<a class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#notifymodal"><i class="fa fa-envelope"></i> Notify Me</a>
 				[%END IF%]
