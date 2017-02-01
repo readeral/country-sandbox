@@ -3,7 +3,7 @@
 	[%extra_options id:'[@current_sku@]'%]
 		[%PARAM *header%]
 		<form>
-			[%list_item_variations id:'[@current_sku@]'%]
+			[%list_item_variations id:'[@SKU@]'%]
 				[%param header%]
 				<input type="hidden" id="_itmspec_sku" value="[%nohtml%][@current_sku@][%/nohtml%]">
 				<hr>
@@ -69,7 +69,6 @@
 				[%/param%]
 				[%param *variation_footer_select%]
 											</select>
-											<div>[@value_id@][@value_name@]</div>
 										</span>
 									</div>
 								</div>
