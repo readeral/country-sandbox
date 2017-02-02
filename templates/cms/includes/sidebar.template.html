@@ -126,15 +126,15 @@
 							</li>
 						[%/PARAM%]
 					[%/PRODUCT_FILTER%]
-					[%PRODUCT_FILTER type:'brand' limit:'6' autohide:'0'%]
+					[%PRODUCT_FILTER type:'brand' sortoption:'sortorder' limit:'6' autohide:'0'%]
 						[%PARAM header%]
 							<li class="list-group-item"><h4>Filter By Brand</h4></li>
 						[%/PARAM%]
 						[%PARAM *body%]
 							[%DATA id:'selected' if:'==' value:'1'%]
 								[%PARAM *if_true%]
-									<li class="filter-remove"><a href="[@remove_url@]" class="list-group-item" rel="nofollow">
-										[@brand@] <span class="text-muted">([@total@])</span></a>
+									<li class="filter-remove">
+										<a href="[@remove_url@]" class="list-group-item" rel="nofollow">[@brand@] <span class="text-muted">([@total@])</span></a>
 									</li>
 								[%/PARAM%][%PARAM *if_false%]
 									<li class="filter">
