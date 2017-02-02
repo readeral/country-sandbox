@@ -129,30 +129,9 @@
 			[%if [@has_variation@] || ![@has_child@] AND ![@has_components@]%]
 				[%load_ajax_template id:'_buying_options' type:'item' template:'buying_options' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 				[%load_ajax_template id:'_buying_options2' type:'item' template:'buying_options2' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
-				[%load_ajax_template id:'_buying_options_package' type:'item' template:'buying_options_package' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 			[%/if%]
 			<!-- AKR adding -->
-			[%thumb_list type:'products' filter_category:'[@CONFIG:UpsellKit@]' template:'package_sell' limit:'[@config:upsell_limit@]'%]
-				[%param *header%]
-				<hr />
-				<h3>Add a starter kit</h3>
-				<br />
-				<div class="row custom-cross-panel">
-				[%/param%][%param footer%]
-				</div>
-				[%/param%]
-			[%/thumb_list%]
-			[%thumb_list type:'products' filter_category:'[@CONFIG:UpsellGrinder@]' template:'package_sell' limit:'20'%]
-				[%param header%]
-				<hr />
-				<h3>Package with a grinder</h3>
-				<br />
-				<div class="row custom-cross-panel">
-				[%/param%]
-				[%param footer%]
-				</div>
-				[%/param%]
-			[%/thumb_list%]
+			[%load_ajax_template id:'_buying_options3' type:'item' template:'buying_options3' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 			<!-- end AKR adding -->
 			[%if [@has_components@]%]
 			<hr>

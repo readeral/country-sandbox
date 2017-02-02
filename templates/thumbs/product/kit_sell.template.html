@@ -1,0 +1,63 @@
+<!-- caching line has been removed from the template here, as it was causing products displayed further down the page, and elsewhere on the site to be rendered incorrectly AKR -->
+<div class="wrapper-thumbnail col-xs-8 col-sm-6 col-md-4 col-lg-3 custom-cross">
+	<div class="thumbnail" itemscope itemtype="http://schema.org/Product">
+		<a href="[@URL@]" target="_blank" class="thumbnail-image">
+			<img src="[%asset_url type:'product' thumb:'thumb' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%END asset_url%]" class="product-image" alt="[@model@]" rel="itmimg[@SKU@]">
+		</a>
+		<div class="caption">
+			<h3 itemprop="name"><a href="[@URL@]" title="[@model@]" target="_blank"><!--##[%format type:'text' maxlength:'60' rmhtml:'1'%]##-->[@model@]<!--##[%END FORMAT%]##--></a></h3>
+			<p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+			<!--<span class="label label-default">Standalone price [%format type:'currency'%][@store_price@][%/format%]</span>-->
+				[%if [@inpromo@]%]
+					Now [%if [@has_child@]%]from&nbsp;[%/if%]
+					<span itemprop="price">[%format type:'currency'%][@promo_price@][%/format%]</span>
+				[%else%]
+					[%if [@has_child@]%]From&nbsp;[%/if%]
+					[%set [@paired_price@] %]
+						[%calc [@store_price@] - [@misc1@] /%]
+					[%/set%]
+					<span itemprop="price" class="red">[%format type:'currency'%][@paired_price@][%/format%]</span>
+					<span itemprop="price" class="strikethrough">[%format type:'currency'%][@store_price@][%/format%]</span>
+				[%/if%]
+				<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
+				<span class="explain"><br />when bought with this machine.</span>
+			</p>
+			<!--# BUYING OPTIONS # ##-->
+			<form class="form-inline buying-options hidden">
+				<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku[@rndm@][@SKU@]" value="[@SKU@]">
+				<input type="hidden" id="model[@rndm@][@SKU@]" name="model[@rndm@][@SKU@]" value="[@model@]">
+				<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb[@rndm@][@SKU@]" value="[@thumb@]">
+				<input type="hidden" id="qty[@rndm@][@SKU@]" name="qty[@rndm@][@SKU@]" value="1" class="input-tiny">
+				<!--##[%IF [@extra@] or [@has_child@] or [@editable_bundle@]%]##-->
+				<a href="[@URL@]" title="Buying Options" class="btn btn-success btn-block btn-loads hidden" target="_blank" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">See Options</a>
+				<!--##[%ELSEIF [@store_quantity@] > 0 AND [@preorder@] %]##-->
+				<button type="button" title="Pre-Order Now!" class="addtocart btn btn-warning btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Pre-Order</button>
+				<!--##[%ELSEIF [@store_quantity@] > 0 AND ![@preorder@] %]##-->
+				<button type="button" title="Add to Cart" class="addtocart btn-success btn btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Add to Cart</button>
+				<!--##[%ELSEIF [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]##-->
+				<button type="button" title="Add to Cart" class="addtocart btn-success btn btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Backorder</button>
+				<!--##[%ELSE%]##-->
+				<a class="notify_popup btn btn-default btn-block btn-loads" href="[@url@]" title="Notify Me When Back In Stock" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Out Of Stock</a>
+				<!--##[%END IF%]##-->
+			</form>
+			<div id="reveal[@rndm@][@SKU@]" class="reveal">
+			[%if [@has_variation@] || ![@has_child@] AND ![@has_components@]%]
+				[%load_ajax_template id:'_buying_options_package' type:'item' template:'buying_options_package' preload:'1' tmpl_sku:'[@SKU@]' tmpl_preview:'y'/%]
+			[%/if%]
+			</div>
+			<!--# END PRODUCT BUYING OPTIONS # ##-->
+		</div>
+		<div class="savings-container">
+			<!--##[%IF [@inpromo@]%]##-->
+				<span class="label label-danger">On Sale</span>
+			<!--##[%END IF%]##-->
+			<!--##[%IF [@save@] > 0 AND ![@has_child@] %]##-->
+				<span class="label label-warning">
+				<!--##[%format type:'percent'%]##-->[@save@]<!--##[%END format%]##--> OFF</span>
+			<!--##[%END IF%]##-->
+			<!--##[%IF [@save@] > 0%]##-->
+				<span class="label label-default">RRP <!--##[%format type:'currency'%]##-->[@retail@]<!--##[%END format%]##--></span>
+			<!--##[%END IF%]##-->
+		</div>
+	</div>
+</div>
