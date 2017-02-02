@@ -40,7 +40,7 @@
 				<a class="notify_popup btn btn-default btn-block btn-loads" href="[@url@]" title="Notify Me When Back In Stock" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Out Of Stock</a>
 				<!--##[%END IF%]##-->
 			</form>
-			<div id="reveal[@rndm@][@SKU@]" class="reveal">
+			<div id="reveal[@rndm@][@SKU@]" class="reveal hidden">
 			[%if [@has_variation@] || ![@has_child@] AND ![@has_components@]%]
 				[%load_ajax_template id:'_buying_options_package' type:'item' template:'buying_options_package' preload:'1' tmpl_sku:'[@SKU@]' tmpl_preview:'y'/%]
 			[%/if%]
