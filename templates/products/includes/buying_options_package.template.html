@@ -5,20 +5,20 @@
 		<form>
 			[%list_item_variations id:'[@SKU@]'%]
 				[%param header%]
-				<input type="hidden" id="_itmspec2_sku" value="[%nohtml%][@SKU@][%/nohtml%]">
+				<input type="hidden" id="_itmspec_sku" value="[%nohtml%][@SKU@][%/nohtml%]">
 				<div class="row">
 				[%/param%]
 				[%param *variation_header%]
-						<div class="_itmspec2_listopt col-xs-12 col-md-12" ref="[@specific_id@]">
+						<div class="_itmspec_listopt col-xs-12 col-md-12" ref="[@specific_id@]">
 							<div class="variation-name">
 								<strong>[@specific_name@]</strong>
 							</div>
 							<div class="specific">
-								<input type="hidden" class="_itmspec2_val" ref="[@specific_id@]" value="[@selected_id@]">
+								<input type="hidden" class="_itmspec_val" ref="[@specific_id@]" value="[@selected_id@]">
 			[%/param%]
 			[%param *variation_body%]
-								<div class="_itmspec2_listitm" ref="[@specific_id@]_[@value_id@]">
-									<a class="_itmspec2_lnk [%if [@selected@]%]_itmspec2_selected[%/if%]" href="javascript:void(0);" ref="[@specific_id@]_[@value_id@]">
+								<div class="_itmspec_listitm" ref="[@specific_id@]_[@value_id@]">
+									<a class="_itmspec_lnk [%if [@selected@]%]_itmspec_selected[%/if%]" href="javascript:void(0);" ref="[@specific_id@]_[@value_id@]">
 										[%if [@value_image@]%]
 											<img src="[@value_image@]" alt="[@value_name@]" />
 										[%/if%]
@@ -31,13 +31,13 @@
 								</div>
 			[%/param%]
 			[%param *variation_body_radio%]
-								<label class="_itmspec2_listitm btn btn-default" ref="[@specific_id@]_[@value_id@]">
-									<input class="_itmspec2_radio" type="radio" name="_itmspec2_radio[@specific_id@]" value="[@value_id@]" ref="[@specific_id@]_[@value_id@]" [%if [@selected@]%]checked[%/if%]> [@value_name@]
+								<label class="_itmspec_listitm btn btn-default" ref="[@specific_id@]_[@value_id@]">
+									<input class="_itmspec_radio" type="radio" name="_itmspec_radio[@specific_id@]" value="[@value_id@]" ref="[@specific_id@]_[@value_id@]" [%if [@selected@]%]checked[%/if%]> [@value_name@]
 								</label>
 			[%/param%]
 			[%param *variation_body_image%]
-								<span class="_itmspec2_listitm" ref="[@specific_id@]_[@value_id@]">
-									<a class="_itmspec2_lnk [%if [@selected@]%]_itmspec2_selected[%/if%]" href="javascript:void(0);" ref="[@specific_id@]_[@value_id@]">
+								<span class="_itmspec_listitm" ref="[@specific_id@]_[@value_id@]">
+									<a class="_itmspec_lnk [%if [@selected@]%]_itmspec_selected[%/if%]" href="javascript:void(0);" ref="[@specific_id@]_[@value_id@]">
 										[%if [@value_image@]%]
 												<img src="[@value_image@]" alt="[@value_name@]">
 											[%else%]
@@ -53,15 +53,15 @@
 			[%/param%]
 			[%param *variation_header_select%]
 			<div class="hidden"><strong>Data</strong><br />Parent: [@parent_sku@], Current: [@current_sku@], SKU: [@SKU@]</div>
-						<div class="_itmspec2_listopt col-xs-12 col-md-12" ref="[@specific_id@]">
+						<div class="_itmspec_listopt col-xs-12 col-md-12" ref="[@specific_id@]">
 							<div class="variation-name">
 								<strong>[@specific_name@]</strong>
 							</div>
 								<div class="specific">
-									<input type="hidden" class="_itmspec2_val" ref="[@specific_id@]" value="[@selected_id@]">
+									<input type="hidden" class="_itmspec_val" ref="[@specific_id@]" value="[@selected_id@]">
 									<div class="n-wrapper-form-control">
-										<span class="_itmspec2_optpl" ref="[@specific_id@]">
-											<select class="_itmspec2_opt form-control" ref="[@specific_id@]">
+										<span class="_itmspec_optpl" ref="[@specific_id@]">
+											<select class="_itmspec_opt form-control" ref="[@specific_id@]">
 				[%/param%]
 				[%param *variation_body_select%]
 												<option value="[@value_id@]" [%if [@selected@]%]selected[%/if%]>[@value_name@]</option>
