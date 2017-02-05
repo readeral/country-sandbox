@@ -114,6 +114,9 @@
 					<label class="control-label col-xs-2">Sort</label>
 					<div class="col-xs-10">
 						<select name="sortby" onChange="return this.form.submit();" class="form-control">
+							<option value="popular" [%SORTBY type:'products' if:'eq' value:'top_sellers'%]selected[%/SORTBY%]>
+								Best Selling
+							</option>
 							<option value="popular" [%SORTBY type:'products' if:'eq' value:'popular'%]selected[%/SORTBY%]>
 								Most Popular
 							</option>
