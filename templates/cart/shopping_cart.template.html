@@ -9,13 +9,9 @@
 				<button class="btn btn-default btn-block" type="button" onclick="window.location='[%url page:'checkout' fn:'quote'/%]';" title="Create Quote From Cart"> <i class="fa fa-list-alt"></i> Create Quote From Cart </button>
 			</div>
 		[%/config%]
-		<div class="col-xs-12 col-md-3 text-center">
-			[%config id:'SHOW_PAYPAL_EXPRESS_LINK' if:'==' value:'1'%]
-			[%if [@form:npurpose@] ne 'facebook'%]
-				<p><a class="btn btn-block btn-paypal" href="javascript:document.paypal.submit()">Checkout with <i class="fa fa-coloured-paypal"></i></a></p>
-			[%/if%]
-		</div>
+
 		<div class="col-xs-12 col-md-3 [%config id:'ALLOW_USER_QUOTE' if:'==' value:'1'%]col-md-offset-6[%/config%][%config id:'ALLOW_USER_QUOTE' if:'==' value:'0'%]col-md-offset-9[%/config%]">
+					<p><a class="btn btn-block btn-paypal" href="javascript:document.paypal.submit()">Checkout with <i class="fa fa-coloured-paypal"></i></a></p>
 			<button class="btn btn-success btn-lg btn-block" type="button" onclick="window.location='[%url page:'checkout' fn:'payment'/%]';" title="Checkout Now"><i class="fa fa-shopping-cart icon-white"></i> Checkout Now</button>
 		</div>
 	</div>
