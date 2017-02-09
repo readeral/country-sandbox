@@ -8,7 +8,7 @@
 	</div>
 	[%/param%]
 [%/thumb_list%]
-[%if [@misc15@] %]
+[%if [@misc15@] == 'true' %]
 [%thumb_list type:'products' filter_category:'[@CONFIG:UpsellGrinder@]' template:'package_sell' limit:'20'%]
 	[%param header%]
 	<hr />
