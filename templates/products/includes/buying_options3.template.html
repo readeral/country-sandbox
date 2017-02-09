@@ -1,3 +1,4 @@
+[%if [@user:group_id@] == 1%]
 [%thumb_list type:'products' filter_category:'[@CONFIG:UpsellKit@]' template:'kit_sell' limit:'[@config:upsell_limit@]'%]
 	[%param *header%]
 	<hr />
@@ -8,7 +9,7 @@
 	</div>
 	[%/param%]
 [%/thumb_list%]
-[%if [@misc15@] == 'true' %]
+[%if [@misc15@] ne 'false' %]
 [%thumb_list type:'products' filter_category:'[@CONFIG:UpsellGrinder@]' template:'package_sell' limit:'20'%]
 	[%param header%]
 	<hr />
@@ -20,4 +21,5 @@
 	</div>
 	[%/param%]
 [%/thumb_list%]
+[%/if%]
 [%/if%]
