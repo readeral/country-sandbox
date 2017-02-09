@@ -66,12 +66,14 @@
 						SAVE [%format type:'percent'%][@save@][%/format%]!
 					</div>
 				[%/if%]
+				[%/if [@group_id@] > 1%]
 				<div class="productsavetext">
 					Sale Ends in <span id="sale-end" class="time"></span>
 				</div>
 				<div class="time-text">
 					[%format type:'date' format:' #H:#I #a, #d #K #Y'%][@promo_end@][%/format%]
 				</div>
+				[%/if%]
 			[%/if%]
 			[%if [@store_quantity@] > 0 AND [@preorder@] %]
 				<span itemprop="availability" content="preorder" class="label label-warning">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</span>
