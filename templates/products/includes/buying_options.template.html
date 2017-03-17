@@ -112,7 +112,7 @@
 				[%ELSEIF [@store_quantity@] > 0 AND ![@preorder@] %]
 				<button type="button" title="Add to Cart" class="addtocart btn btn-success btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-shopping-cart icon-white"></i> Add to Cart</button>
 				[%ELSEIF [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
-					[%if [@arrival_date@]]
+					[%if [@arrival_date@]%]
 					<button type="button" title="Add to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@current_sku@]"><i class="fa fa-clock-o icon-white"></i> Backorder</button>
 					[%else%]
 					<button type="button" title="Add to Cart" class="addtocart btn btn-success btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@current_sku@]"><i class="fa fa-shopping-cart icon-white"></i> Add to Cart</button>
