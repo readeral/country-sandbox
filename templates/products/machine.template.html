@@ -32,6 +32,9 @@
 			});
 		});
 	</script>
+	<script type="text/javascript" language="javascript">
+    $.load_ajax_template('buying_options3');
+  </script>
 [%/site_value%]
 [%cache type:'display' id:'[@inventory_id@]'%]
 <div class="col-xs-12">
@@ -130,9 +133,6 @@
 				[%load_ajax_template id:'_buying_options' type:'item' template:'buying_options' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 				[%load_ajax_template id:'_buying_options2' type:'item' template:'buying_options2' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 			[%/if%]
-			<!-- AKR adding -->
-			[%load_ajax_template id:'_buying_options3' type:'item' template:'buying_options3' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
-			<!-- end AKR adding -->
 			[%if [@has_components@]%]
 			<hr>
 				<h2>Customise Your Purchase</h2>
@@ -409,6 +409,9 @@
 					[%/if%]
 				</div><!--/.tab-content-->
 			</div><!--/.tabbable-->
+			<!-- AKR adding -->
+			[%load_ajax_template id:'_buying_options3' type:'item' template:'buying_options3' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+			<!-- end AKR adding -->
 			[%upsell_products id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
 				[%param header%]
 				<hr />
