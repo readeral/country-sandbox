@@ -79,9 +79,9 @@
 			[%if [@store_quantity@] > 0 AND [@preorder_quantity@] > 0 %]
 				<span itemprop="availability" content="preorder" class="label label-warning">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</span>
 			[%elseif [@store_quantity@] > 0 AND [@preorder_quantity@] == 0 %]
-				<span itemprop="availability" content="in_stock" class="label label-success">In Stock</span>
+				<span itemprop="availability" content="in_stock" class="label label-success">Dispatched same day.</span>
 			[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
-				<span itemprop="availability" content="out_of_stock" class="label label-danger">Backorder Available - [%if [@arrival_date@]%]eta [%format type:'date'%][@arrival_date@][%/format%][%else%] dispatched in [%if [@misc2@]%][@misc2@][%else%] 2 to 3 days[%/if%][%/if%]</span>
+				<span itemprop="availability" content="out_of_stock" class="label label-danger">[%if [@arrival_date@]%]eta [%format type:'date'%][@arrival_date@][%/format%][%else%]Dispatched in [%if [@misc2@]%][@misc2@][%else%] 1 to 2 days[%/if%][%/if%]</span>
 			[%else%]
 				<span itemprop="availability" content="out_of_stock" class="label label-danger">Sold Out</span>
 			[%/if%]
