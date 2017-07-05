@@ -37,7 +37,7 @@
 			</form>
 			<!--# END PRODUCT BUYING OPTIONS # ##-->
 		</div>
-		[%if [@save@] != 100%]
+		[%if [@save@] > 0 AND [@save@] != 100%]
 		<div class="savings-container">
 			<!--##[%IF [@inpromo@]%]##-->
 			<!--##[%IF [@user:group_id@] > 1 %]##-->
