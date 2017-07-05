@@ -39,9 +39,9 @@
 			<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 			[%if ![@inpromo@]%]
 				<div class="productprice productpricetext" itemprop="price">
-					[%if [@misc3@] != 0 %]From [%FORMAT type:'currency'%][@misc3@][%/FORMAT%][%else%][%FORMAT type:'currency'%][@store_price@][%/FORMAT%][%/if%]
+					[%if [@store_price@] == 0 AND [@retail@] > 0 %]From [%FORMAT type:'currency'%][@retail@][%/FORMAT%][%else%][%FORMAT type:'currency'%][@store_price@][%/FORMAT%][%/if%]
 				</div>
-				[%if [@save@] > 0%]
+				[%if [@save@] > 0 AND [@save@] != [@retail@]%]
 					<div class="productrrp text-muted">
 						RRP [%FORMAT type:'currency'%][@retail@][%/FORMAT%]
 					</div>
