@@ -39,7 +39,7 @@
 			<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 			[%if ![@inpromo@]%]
 				<div class="productprice productpricetext" itemprop="price">
-					[%FORMAT type:'currency'%][if [@misc3@]%]From [@misc3@][%else%][@store_price@][%/if%][%/FORMAT%]
+					[%FORMAT type:'currency'%][%if [@misc3@]%]From [@misc3@][%else%][@store_price@][%/if%][%/FORMAT%]
 				</div>
 				[%if [@save@] > 0%]
 					<div class="productrrp text-muted">
