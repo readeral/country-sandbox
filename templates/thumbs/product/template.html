@@ -37,6 +37,7 @@
 			</form>
 			<!--# END PRODUCT BUYING OPTIONS # ##-->
 		</div>
+		[%if [@save@] != 100%]
 		<div class="savings-container">
 			<!--##[%IF [@inpromo@]%]##-->
 			<!--##[%IF [@user:group_id@] > 1 %]##-->
@@ -53,6 +54,7 @@
 				<span class="label label-default">RRP <!--##[%format type:'currency'%]##-->[@retail@]<!--##[%END format%]##--></span>
 			<!--##[%END IF%]##-->
 		</div>
+		[%/if%]
 	</div>
 </div>
 <!--##[%END CACHE%]##-->
