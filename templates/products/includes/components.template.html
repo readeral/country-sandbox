@@ -63,7 +63,7 @@
 													</p>
 													[%if [@variation_available@] < '1'%]
 														<select disabled class="component-var-opt form-control component-config-input">
-															<option selected></option>
+															<option selected>Out Of Stock</option>
 														</select>
 													[%/if%]
 												[%list_item_variations id:'[@current_sku@]'%]
@@ -73,7 +73,7 @@
 																<option value="" disabled selected>[@specific_name@]</option>
 													[%/PARAM%]
 													[%PARAM *variation_body%]
-																<option value="[@value_id@]">[@value_name@][%IF ![@variation_qty@]%][%/IF%]</option>
+																<option value="[@value_id@]">[@value_name@][%IF ![@variation_qty@]%](hooray)[%/IF%]</option>
 													[%/PARAM%]
 													[%PARAM *variation_footer%]
 																</select>
