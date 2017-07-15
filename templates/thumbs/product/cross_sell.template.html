@@ -35,7 +35,7 @@
 				<!--##[%ELSEIF [@store_quantity@] > 0 AND ![@preorder@] %]##-->
 				<button type="button" title="Add to Cart" class="addtocart btn-success btn btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Add to Cart</button>
 				<!--##[%ELSEIF [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]##-->
-				<button type="button" title="Add to Cart" class="addtocart btn-success btn btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Backorder</button>
+				<button type="button" title="Add to Cart" class="addtocart btn-success btn btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Add To Cart</button>
 				<!--##[%ELSE%]##-->
 				<a class="notify_popup btn btn-default btn-block btn-loads" href="[@url@]" title="Notify Me When Back In Stock" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Out Of Stock</a>
 				<!--##[%END IF%]##-->
