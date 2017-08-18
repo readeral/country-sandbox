@@ -175,7 +175,7 @@
 		</div>
 	[%/PARAM%]
 [%/THUMB_LIST%]
-[%/IF%]
+[%ELSE%]
 [%THUMB_LIST type:'products' limit:'[@config:THUMB_LIMIT@]'%]
 	[%PARAM template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/PARAM%]
 	[%PARAM *header%]
@@ -273,4 +273,5 @@
 		</div>
 	[%/PARAM%]
 [%/THUMB_LIST%]
+[%/IF%]
 </div>
