@@ -86,17 +86,6 @@
 		</ul>
 	[%/param%]
 [%/thumb_list%]
-[%IF [@content_id@] == 473%]
-[%thumb_list type:'products' show_next_level:'[@content_level@]' template:'' limit:'[@config:related_limit@]'%]
-	[%param header%]
-		<hr>
-		<div class="row">
-	[%/param%]
-	[%param footer%]
-		</div>
-	[%/param%]
-[%/thumb_list%]
-[%ELSE%]
 [%thumb_list type:'products' template:'' limit:'[@config:related_limit@]'%]
 	[%param header%]
 		<hr>
@@ -106,7 +95,6 @@
 		</div>
 	[%/param%]
 [%/thumb_list%]
-[%/IF%]
 [%IF [@content_allow_reviews@]%]
 <div class="dropdown">
 	<button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">

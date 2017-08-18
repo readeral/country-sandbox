@@ -77,7 +77,7 @@
 		<hr>
 	[%/if%]
 [%/if%]
-[%THUMB_LIST type:'products' limit:'[@config:THUMB_LIMIT@]'%]
+[%THUMB_LIST type:'products' [%IF [@content_id@] == 473%]show_next_level:'[@content_level@]'[%/IF%] limit:'[@config:THUMB_LIMIT@]'%]
 	[%PARAM template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/PARAM%]
 	[%PARAM *header%]
 	<div class="row sort_container">
