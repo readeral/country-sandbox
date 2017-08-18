@@ -1,6 +1,5 @@
-[%IF [@content_level@] <= 2 %]
 <div class="" itemtype="http://schema.org/Article">
-	<h4><a href="[@URL@]" itemprop="url">[@content_name@]</a></h4>
+	<h4><a href="[@URL@]" itemprop="url" parentlevel="[@content_level@]">[@content_name@]</a></h4>
 		<p class="text-muted">
 			[%IF [@content_author@]%]
 			Author: [@content_author@] &nbsp;
@@ -32,4 +31,3 @@
 	</p>
 	<hr/>
 </div>
-[%/IF%]
