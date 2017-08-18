@@ -79,6 +79,7 @@
 [%/if%]
 [%IF [@content_id@] == 473%]
 [%THUMB_LIST type:'products' show_next_level:'[@content_level@]' limit:'[@config:THUMB_LIMIT@]'%]
+[%product_filter type:'category' filter_parent_content:'1' filter_parent_content_id:'473'%]
 	[%PARAM template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/PARAM%]
 	[%PARAM *header%]
 	<div class="row sort_container">
@@ -174,6 +175,7 @@
 			</div>
 		</div>
 	[%/PARAM%]
+	[%/product_filter%]
 [%/THUMB_LIST%]
 [%ELSE%]
 [%THUMB_LIST type:'products' limit:'[@config:THUMB_LIMIT@]'%]
