@@ -139,7 +139,7 @@
 				<div class="navbar navbar-default navbar-secondary">
 					<div class="navbar-collapse collapse navbar-responsive-collapse">
 						<ul class="nav navbar-nav">
-								[%categorymenu sortby:'sortorder,name' show_empty:'1'%]
+								[%categorymenu sortby:'sortorder,name' show_empty:'0'%]
 									[%param *level_1%]
 										<li class="[%if [@next_level@]%]dropdown dropdown-hover[%/if%]"> <a href="[@url@]" [%if [@next_level@]%]class="dropdown-toggle"[%/if%]>[@name@] [%if [@next_level@]%]<span class="caret"></span>[%/if%]</a>
 											[%if [@next_level@]%]
