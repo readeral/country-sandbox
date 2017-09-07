@@ -3,6 +3,16 @@
 		$(document).ready(function() {
 			$.product_variationInit({
 				'loadtmplates': ['_buying_options', '_images','_header'],
+
+									// This is where the magic happens
+									'select_template' : {
+									    'header':'<select class="##sel_class##" ref="##specific_id##">',
+									    'body':'<option value="##value_id##" ##IF:select## selected ##END IF:select##>##value_name####IF:nostock## ##END IF:nostock##</option>',
+									    'footer':'</select>'
+									},
+									// End magic
+
+
 				'fns' : {
 					'onLoad' : function () {
 						$('.addtocart').button("loading");
@@ -20,18 +30,18 @@
 	</script>
 	<script type="text/javascript" src="//cdn.neto.com.au/assets/neto-cdn/jcountdown/1.4/jquery.jcountdown.min.js"></script>
 		<script type="text/javascript">
-		$(document).ready(function(){
-			$('.zoom').zoom();
-		});
-	</script>
+		$(document).ready(function() {
+  $(".zoom").zoom();
+});
+</script>
 	<script type="text/javascript" src="//cdn.neto.com.au/assets/neto-cdn/zoom/1.4/jquery.zoom-min.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$("#sale-end").countdown({
-				date: "[%format type:'date' format:'#K #d, #Y  #H:#I'%][@promo_end@][%/format%]"
-			});
-		});
-	</script>
+	$(document).ready(function() {
+  $("#sale-end").countdown({
+    date: "[%format type:'date' format:'#K #d, #Y  #H:#I'%][@promo_end@][%/format%]"
+  });
+});
+</script>
 [%/site_value%]
 [%cache type:'display' id:'[@inventory_id@]'%]
 <div class="col-xs-12">

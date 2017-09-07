@@ -7,7 +7,7 @@
 					// This is where the magic happens
 					'select_template' : {
 					    'header':'<select class="##sel_class##" ref="##specific_id##">',
-					    'body':'<option value="##value_id##" ##IF:select## selected ##END IF:select##>##value_name####IF:nostock## ()##END IF:nostock##</option>',
+					    'body':'<option value="##value_id##" ##IF:select## selected ##END IF:select##>##value_name####IF:nostock## ##END IF:nostock##</option>',
 					    'footer':'</select>'
 					},
 					// End magic
