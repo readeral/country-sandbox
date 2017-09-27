@@ -10,14 +10,14 @@
 			<!--<span class="label label-default">Standalone price [%format type:'currency'%][@store_price@][%/format%]</span>-->
 				[%if [@inpromo@]%]
 					Now [%if [@has_child@]%]from&nbsp;[%/if%]
-					<span itemprop="price">[%format type:'currency'%][@promo_price@][%/format%]</span>
+					<span itemprop="price" content="[@promo_price@]">[%format type:'currency'%][@promo_price@][%/format%]</span>
 				[%else%]
 					[%if [@has_child@]%]From&nbsp;[%/if%]
 					[%set [@paired_price@] %]
 						[%calc [@store_price@] - [@misc1@] /%]
 					[%/set%]
-					<span itemprop="price" class="red">[%format type:'currency'%][@paired_price@][%/format%]</span>
-					<span itemprop="price" class="strikethrough">[%format type:'currency'%][@store_price@][%/format%]</span>
+					<span class="red">[%format type:'currency'%][@paired_price@][%/format%]</span>
+					<span class="strikethrough">[%format type:'currency'%][@store_price@][%/format%]</span>
 				[%/if%]
 				<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 				<span class="explain"><br />when bought with this machine.</span>

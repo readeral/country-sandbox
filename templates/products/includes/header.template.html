@@ -38,7 +38,7 @@
 		<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="wrapper-pricing col-sm-4">
 			<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
 			[%if ![@inpromo@]%]
-				<div class="productprice productpricetext" itemprop="price">
+				<div class="productprice productpricetext" itemprop="price" content="[%if [@store_price@] == 0 AND [@retail@] > 0 %][@retail@][%else%][@store_price@][%/if%]">
 					[%if [@store_price@] == 0 AND [@retail@] > 0 %]From [%FORMAT type:'currency'%][@retail@][%/FORMAT%][%else%][%FORMAT type:'currency'%][@store_price@][%/FORMAT%][%/if%]
 				</div>
 				[%if [@save@] > 0 AND [@save@] != 100%]
