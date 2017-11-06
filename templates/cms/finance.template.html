@@ -31,7 +31,7 @@
 	[%/if%]
 	<hr>
 	<div id="homepage-content">[@page_content@]</div>
-	[%thumb_list type:'products' template:'' filter_category:'878' limit:'9'%]
+	[%thumb_list type:'products' template:'' filter_category:'878' limit:'12'%]
     [%param *header%]
         <h3>Recommended Products</h3>
         <div class="row">
@@ -40,26 +40,4 @@
         </div>
     [%/param%]
 [%/thumb_list%]
-	[%if [@config:show_home_ads@]%]
-		[%advert type:'product' limit:'8' template:'' ad_group:''%]
-			[%param *header%]
-				<hr />
-				<div class="row">
-			[%/param%]
-			[%param footer%]
-				</div>
-			[%/param%]
-			[%param *ifempty%]
-				[%random_products category:'0' template:'' limit:'8'%]
-					[%param *header%]
-						<hr />
-						<div class="row">
-					[%/param%]
-					[%param *footer%]
-						</div>
-					[%/param%]
-				[%/random_products%]
-			[%/param%]
-		[%/advert%]
-	[%/if%]
 </div>
