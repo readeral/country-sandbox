@@ -107,7 +107,6 @@
 				<input type="number" min="[@min_qty@]" class="form-control qty input-lg" id="qty[@rndm@][@SKU@]" name="qty" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
 			</div>
 			<div class="col-xs-12 col-md-4">
-				[@misc4@]
 				[%IF [@misc4@] AND [@store_quantity@] < 1 %]
 				<a class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#notifymodal"><i class="fa fa-ban"></i> No longer stocked</a>
 				[%ELSEIF [@store_quantity@] > 0 AND [@preorder_quantity@] > 0 %]
