@@ -107,7 +107,10 @@
 				<input type="number" min="[@min_qty@]" class="form-control qty input-lg" id="qty[@rndm@][@SKU@]" name="qty" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
 			</div>
 			<div class="col-xs-12 col-md-4">
-				[%IF [@store_quantity@] > 0 AND [@preorder_quantity@] > 0 %]
+				[@misc4@]
+				[%IF [@misc4@] AND [@store_quantity@] < 1 %]
+				<a class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#notifymodal"><i class="fa fa-ban"></i> No longer stocked</a>
+				[%ELSEIF [@store_quantity@] > 0 AND [@preorder_quantity@] > 0 %]
 				<button type="button" title="Add to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-clock-o icon-white"></i> Pre-Order Now</button>
 				[%ELSEIF [@store_quantity@] > 0 AND [@preorder_quantity@] == 0 %]
 				<button type="button" title="Add to Cart" class="addtocart btn btn-success btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-shopping-cart icon-white"></i> Add to Cart</button>
@@ -117,8 +120,6 @@
 					[%else%]
 					<button type="button" title="Add to Cart" class="addtocart btn btn-success btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@current_sku@]"><i class="fa fa-shopping-cart icon-white"></i> Add to Cart</button>
 					[%/if%]
-				[%ELSEIF [@store_quantity@] < 1 AND [@misc4@] %]
-				<a class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#notifymodal"><i class="fa fa-ban"></i> No longer stocked</a>
 				[%ELSE%]
 				<a class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#notifymodal"><i class="fa fa-envelope"></i> Notify Me</a>
 				[%END IF%]
