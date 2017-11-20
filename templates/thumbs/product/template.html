@@ -25,6 +25,8 @@
 				<input type="hidden" id="qty[@rndm@][@SKU@]" name="qty[@rndm@][@SKU@]" value="1" class="input-tiny">
 				<!--##[%IF [@extra@] or [@has_child@] or [@editable_bundle@]%]##-->
 				<a href="[@URL@]" title="Buying Options" class="btn btn-primary btn-block btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">See Options</a>
+				<!--##[%ELSEIF [@misc4@] AND [@store_quantity@] < 1 %]##-->
+				<a class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#notifymodal"><i class="fa fa-ban"></i> No longer stocked</a>
 				<!--##[%ELSEIF [@store_quantity@] > 0 AND [@preorder@] %]##-->
 				<button type="button" title="Pre-Order Now!" class="addtocart btn btn-warning btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Pre-Order</button>
 				<!--##[%ELSEIF [@store_quantity@] > 0 AND ![@preorder@] %]##-->
